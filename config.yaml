@@ -1,0 +1,63 @@
+# fullsend organization configuration
+# https://github.com/fullsend-ai/fullsend
+#
+# This file is managed by fullsend. Manual edits may be overwritten.
+version: "1"
+dispatch:
+    platform: github-actions
+    mode: oidc-mint
+inference:
+    provider: vertex
+defaults:
+    roles:
+        - fullsend
+        - triage
+        - coder
+        - review
+        - retro
+        - prioritize
+    runtime: claude
+    max_implementation_retries: 2
+    auto_merge: false
+repos:
+    e2e-lock:
+        enabled: true
+    test-repo:
+        enabled: true
+    test-repo-01:
+        enabled: false
+    test-repo-02:
+        enabled: false
+    test-repo-03:
+        enabled: false
+    test-repo-04:
+        enabled: false
+    test-repo-05:
+        enabled: false
+    test-repo-06:
+        enabled: false
+    test-repo-07:
+        enabled: false
+    test-repo-08:
+        enabled: false
+    test-repo-08-url-harness-host:
+        enabled: true
+    test-repo-09:
+        enabled: false
+    test-repo-10:
+        enabled: false
+    test-repo-11:
+        enabled: false
+    test-repo-12:
+        enabled: false
+    url-harness-host:
+        enabled: true
+allowed_remote_resources:
+    - https://raw.githubusercontent.com/fullsend-ai/fullsend/
+    - https://raw.githubusercontent.com/fullsend-ai/agents/
+create_issues:
+    allow_targets:
+        orgs:
+            - halfsend-09
+        repos:
+            - fullsend-ai/fullsend
